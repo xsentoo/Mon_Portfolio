@@ -109,7 +109,7 @@ export const projectsData: Record<string, ProjectDetail> = {
       dashboard: "/projects/wheelson66_dashboard.png",
       map: "/projects/wheelson66_map.png"
     },
-    github: "https://github.com/xsentoo/WheelsOn66Front"
+    github: "https://github.com/xsentoo/WheelsOn66-Backend.git"
   },
   "hackzone": {
     slug: "hackzone",
