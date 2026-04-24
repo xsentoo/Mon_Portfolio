@@ -2,26 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fafafa;
+    --foreground: #111111;
+    --border: #eaeaea;
+    --accent: #f0f0f0;
+    --accent-foreground: #000000;
+  }
+
+  .dark {
+    --background: #000000;
+    --foreground: #f0f0f0;
+    --border: #222222;
+    --accent: #111111;
+    --accent-foreground: #ffffff;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground tracking-tight overscroll-y-none selection:bg-neutral-800 selection:text-white dark:selection:bg-white dark:selection:text-black antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .glass {
+    @apply bg-white/70 dark:bg-black/70 backdrop-blur-md border-b shadow-sm;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 dark:bg-black/5 backdrop-blur-lg border border-white/10 dark:border-white/10 shadow-xl rounded-2xl;
   }
 }
