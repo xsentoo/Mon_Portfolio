@@ -11,7 +11,7 @@ const projects = [
     slug: "wheelson66",
     description: "Application mobile sociale de planification de road trips. Architecture microservices avec Spring Cloud, messages asynchrones via Kafka, requêtes optimisées ElasticSearch, et conteneurisation Docker.",
     tech: ["Java", "Spring Boot", "React Native", "Kafka", "Docker", "PostgreSQL"],
-    github: "https://github.com/xsentoo/WheelsOn66Front"
+    github: "https://github.com/xsentoo/WheelsOn66-Backend.git"
   },
   {
     title: "HackZone",
@@ -54,21 +54,21 @@ export function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, idx) => {
             const isInternal = !!project.slug;
-            
+
             return (
               <FadeIn key={project.title} delay={idx * 0.15} className="group h-full">
                 <Link href={isInternal ? `/project/${project.slug}` : project.github} target={isInternal ? "_self" : "_blank"} passHref legacyBehavior>
-                  <motion.a 
+                  <motion.a
                     className="block h-full cursor-pointer"
                     whileHover={{ y: -8, scale: 1.01 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   >
                     <div className="flex flex-col h-full bg-surface border border-border rounded-3xl p-8 shadow-sm group-hover:shadow-2xl transition-shadow duration-500 relative overflow-hidden">
-                      
+
                       {/* Subtle hover gradient */}
                       <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      
+
                       <div className="flex-1 relative z-10">
                         <h3 className="text-xl md:text-2xl font-bold mb-4 flex items-center justify-between">
                           <span className="bg-gradient-to-r from-foreground to-foreground bg-[length:0%_2px] bg-no-repeat bg-left-bottom group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out pb-1">
@@ -85,7 +85,7 @@ export function Projects() {
                           {project.description}
                         </p>
                       </div>
-                      
+
                       <div className="relative z-10">
                         <div className="flex flex-wrap gap-2 mb-2">
                           {project.tech.map(tech => (
